@@ -1,71 +1,100 @@
-# vscode-gpt-assistant README
+# VS Code GPT Assistant
 
-This is the README for your extension "vscode-gpt-assistant". After writing up a brief description, we recommend including the following sections.
+VS Code GPT Assistant는 OpenAI의 GPT-4를 활용하여 코드 분석, 자동완성, 개선을 도와주는 Visual Studio Code 확장 프로그램입니다.
 
-## Features
+## 기능
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **코드 분석 (Ask GPT)**: 선택한 코드에 대한 상세한 설명과 분석을 제공합니다.
+- **코드 자동완성 (Complete Code)**: 작성 중인 코드의 다음 부분을 지능적으로 제안합니다.
+- **코드 개선 (Improve Code)**: 선택한 코드의 개선사항을 제안하고 더 나은 구현 방법을 제시합니다.
 
-For example if there is an image subfolder under your extension project workspace:
+## 설치 요구사항
 
-\!\[feature X\]\(images/feature-x.png\)
+- Visual Studio Code 1.80.0 이상
+- Node.js 14.0.0 이상
+- OpenAI API 키
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 설치 방법
 
-## Requirements
+1. VS Code의 확장 마켓플레이스에서 "GPT Assistant" 검색
+2. 설치 버튼 클릭
+3. VS Code 재시작
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## 설정
 
-## Extension Settings
+1. VS Code 설정(Settings)에서 "gptAssistant.apiKey" 검색
+2. OpenAI API 키 입력
+3. 설정 저장
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 사용 방법
 
-For example:
+1. 코드 에디터에서 분석/완성/개선하고 싶은 코드 선택
+2. 명령 팔레트 열기 (Ctrl+Shift+P 또는 Cmd+Shift+P)
+3. 다음 명령어 중 하나 실행:
+   - "Ask GPT": 코드 분석
+   - "GPT: Complete Code": 코드 자동완성
+   - "GPT: Improve Code": 코드 개선
 
-This extension contributes the following settings:
+## 개발
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### 환경 설정
 
-## Known Issues
+```bash
+git clone https://github.com/yourusername/vscode-gpt-assistant.git
+cd vscode-gpt-assistant
+npm install
+```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### 프로젝트 구조
 
-## Release Notes
+```
+vscode-gpt-assistant/
+├── src/
+│   ├── extension.ts    # 메인 확장 프로그램 코드
+│   └── test/          # 테스트 파일
+├── .vscode/           # VS Code 설정
+├── .eslintrc.json     # ESLint 설정
+└── package.json       # 프로젝트 설정
+```
 
-Users appreciate release notes as you update your extension.
+### 빌드 및 실행
 
-### 1.0.0
+```bash
+npm run compile
+npm run test
+```
 
-Initial release of ...
+디버그 모드로 실행하려면 VS Code에서 F5를 누르세요.
 
-### 1.0.1
+## 문제 해결
 
-Fixed issue #.
+- **API 키 오류**: OpenAI API 키가 올바르게 설정되어 있는지 확인하세요.
+- **명령어가 보이지 않음**: VS Code를 재시작하거나 확장을 비활성화했다가 다시 활성화해보세요.
+- **응답 오류**: 네트워크 연결을 확인하고, OpenAI API 할당량을 확인해보세요.
 
-### 1.1.0
+## 주요 파일 설명
 
-Added features X, Y, and Z.
+### package.json
+프로젝트의 메타데이터와 의존성을 정의합니다.
 
----
+### src/extension.ts
+확장 프로그램의 주요 로직이 구현되어 있습니다.
 
-## Following extension guidelines
+### .eslintrc.json
+코드 스타일과 품질을 관리하는 ESLint 설정입니다.
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+### tsconfig.json
+TypeScript 컴파일러 설정을 정의합니다.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+## 기여
 
-## Working with Markdown
+버그 리포트, 기능 제안, 풀 리퀘스트를 환영합니다.
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## 라이선스
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+이 프로젝트는 MIT 라이선스로 배포됩니다.
 
-## For more information
+## 크레딧
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- OpenAI GPT-4 API
+- Visual Studio Code Extension API
